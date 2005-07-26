@@ -1,0 +1,4 @@
+{
+# Log time with an each message.
+    ($clamav{LogTime} || 'yes') eq 'yes' ? 'LogTime' : '#LogTime';
+}

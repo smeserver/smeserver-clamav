@@ -1,0 +1,5 @@
+#!/bin/sh
+exec </dev/null
+exec 2>&1
+/sbin/e-smith/expand-template /etc/clamd.conf
+exec /usr/local/bin/softlimit -a 40000000 /usr/sbin/clamd

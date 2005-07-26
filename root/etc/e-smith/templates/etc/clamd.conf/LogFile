@@ -1,0 +1,2 @@
+LogFile /dev/stderr
+LogFileMaxSize 0

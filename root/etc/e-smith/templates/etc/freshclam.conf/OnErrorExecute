@@ -1,0 +1,1 @@
+OnErrorExecute "/sbin/e-smith/freshclam-update-failed"

@@ -1,0 +1,42 @@
+#!/usr/bin/perl -w
+
+use esmith::Build::CreateLinks qw(:all);
+
+my $panel = "manager";
+panel_link("clamav", $panel);
+
+foreach (qw(freshclam.conf clamd.conf cron.d/clamav))
+{
+    templates2events("/etc/$_",
+	qw(
+	    bootstrap-console-save
+	    console-save
+	    email-update
+	    clamav-update
+	));
+}
+
+my $event = "email-update";
+
+foreach my $event (qw(email-update clamav-update))
+{
+    # XXX - FIXME - Could we just sighup clamd here?
+    safe_symlink("restart", "root/etc/e-smith/events/$event/services2adjust/clamd");
+}
+
+safe_symlink("/var/service/freshclam", "root/service/freshclam");
+safe_symlink("/var/service/clamd", "root/service/clamd");
+
+safe_symlink("../daemontools", "root/etc/rc.d/init.d/supervise/clamd");
+service_link_enhanced("clamd", "S80", "7");
+service_link_enhanced("clamd", "K60", "6");
+service_link_enhanced("clamd", "K60", "0");
+service_link_enhanced("clamd", "K60", "1");
+
+safe_symlink("daemontools", "root/etc/rc.d/init.d/freshclam");
+service_link_enhanced("freshclam", "S80", "7");
+service_link_enhanced("freshclam", "K60", "6");
+service_link_enhanced("freshclam", "K60", "0");
+service_link_enhanced("freshclam", "K60", "1");
+
+exit 0;

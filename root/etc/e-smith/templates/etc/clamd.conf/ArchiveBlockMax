@@ -1,0 +1,6 @@
+{
+# Mark archives as viruses if ArchiveMaxFiles, ArchiveMaxFileSize, or
+# ArchiveMaxRecursion limit is reached.
+    ($clamav{ArchiveBlockMax} || 'no') eq 'yes' ? 
+	'ArchiveBlockMax' : '#ArchiveBlockMax';
+}

@@ -1,0 +1,4 @@
+{
+# Enable verbose logging.
+    ($clamav{LogVerbose} || 'yes') eq 'yes' ? 'LogVerbose' : '#LogVerbose';
+}

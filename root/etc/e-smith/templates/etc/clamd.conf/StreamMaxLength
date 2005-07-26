@@ -1,0 +1,2 @@
+# Close the connection if this limit is exceeded.
+StreamMaxLength { $clamav{StreamMaxLength} || '25M' }

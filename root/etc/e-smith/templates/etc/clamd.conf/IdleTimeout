@@ -1,0 +1,4 @@
+{
+# Waiting for a new job will timeout after this time (seconds).
+    "IdleTimeout $clamav{IdleTimeout}";
+}

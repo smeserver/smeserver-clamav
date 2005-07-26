@@ -1,0 +1,5 @@
+{ 
+# Enable internal e-mail scanner.
+    ($clamav{ScanMail} || 'yes') eq 'yes' ? 'ScanMail' : '#ScanMail';
+}
+

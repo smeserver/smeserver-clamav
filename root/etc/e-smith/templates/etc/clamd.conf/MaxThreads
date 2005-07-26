@@ -1,0 +1,4 @@
+{
+# Maximal number of threads running at the same time.
+    "MaxThreads $clamav{MaxThreads}";
+}

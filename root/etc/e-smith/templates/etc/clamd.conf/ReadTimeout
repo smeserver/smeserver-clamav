@@ -1,0 +1,5 @@
+{
+# Waiting for data from a client socket will timeout after this time (seconds).
+# Value of 0 disables the timeout.
+    "ReadTimeout $clamav{ReadTimeout}";
+}

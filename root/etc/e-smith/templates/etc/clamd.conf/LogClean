@@ -1,0 +1,5 @@
+{
+# Also log clean files. Useful in debugging but drastically increases the
+# log size.
+    ($clamav{LogClean} || 'yes') eq 'yes' ? 'LogClean' : '#LogClean';
+}

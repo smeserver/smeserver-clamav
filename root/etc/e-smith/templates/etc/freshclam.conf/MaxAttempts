@@ -1,0 +1,4 @@
+{
+# How many attempts to make before giving up.
+    "MaxAttempts $clamav{MaxAttempts}";
+}

@@ -1,0 +1,138 @@
+#!/usr/bin/perl -wT
+
+# vim: ft=xml ts=8 sw=4 noet:
+#----------------------------------------------------------------------
+# heading     : Configuration
+# description : Antivirus (ClamAV)
+# navigation  : 6000 6720
+#
+# copyright (C) 2004 Shad L. Lords <slords@mail.com>
+# Copyright (C) 2005 Gordon Rowell <gordonr@gormand.com.au>
+# 
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+# 		
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License or more details.
+# 		
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307  USA
+#----------------------------------------------------------------------
+
+use strict;
+use esmith::FormMagick::Panel::clamav;
+my $f = esmith::FormMagick::Panel::clamav->new();
+$f->display();
+
+__DATA__
+<form
+    title="FORM_TITLE"
+    header="/etc/e-smith/web/common/head.tmpl"
+    footer="/etc/e-smith/web/common/foot.tmpl">
+    <page name="First"  post-event="change_settings()"
+	pre-event="print_status_message()">
+
+        <field type="select"
+            id="FilesystemScan"
+            options="'disabled'=>'NEVER', 'daily'=>'DAILY', 'weekly'=>'WEEKLY' "
+            value="get_prop('clamav','FilesystemScan','disabled')">
+            <label>LABEL_FILESYSTEM_SCAN_PERIOD</label>
+            <description>DESC_FILESYSTEM_SCAN_PERIOD</description>
+        </field>
+
+        <field
+            type="literal"
+            value="get_clam_versions()">
+	    <label>LABEL_CLAM_VERSIONS</label>
+        </field>
+
+        <field
+            type="literal"
+	    display="show_update_settings()"
+            value="">
+            <description>DESC_SECTIONBAR</description>
+        </field>
+
+        <field type="select"
+            id="UpdateOfficeHrs"
+	    display="show_update_settings()"
+            options="   'disabled'=>'NEVER', 
+			'everyhour'=>'EVERYHOUR', 
+			'every2hrs'=>'EVERY2HRS', 
+			'every4hrs'=>'EVERY4HRS', 
+			'every6hrs'=>'EVERY6HRS', 
+			'everyday'=>'DAILY' "
+            value="get_prop('clamav','UpdateOfficeHrs','disabled')">
+            <label>LABEL_UPDATE_OFFICE_HOURS</label>
+            <description>DESC_UPDATE_HOURS</description>
+        </field>
+
+        <field type="select"
+            id="UpdateNonOfficeHrs"
+	    display="show_update_settings()"
+            options="   'disabled'=>'NEVER', 
+			'everyhour'=>'EVERYHOUR', 
+			'every2hrs'=>'EVERY2HRS', 
+			'every4hrs'=>'EVERY4HRS', 
+			'every6hrs'=>'EVERY6HRS', 
+			'everyday'=>'DAILY' "
+            value="get_prop('clamav','UpdateNonOfficeHrs','disabled')">
+            <label>LABEL_UPDATE_NON_OFFICE_HOURS</label>
+        </field>
+
+        <field type="select"
+            id="UpdateWeekend"
+	    display="show_update_settings()"
+            options="   'disabled'=>'NEVER', 
+			'everyhour'=>'EVERYHOUR', 
+			'every2hrs'=>'EVERY2HRS', 
+			'every4hrs'=>'EVERY4HRS', 
+			'every6hrs'=>'EVERY6HRS', 
+			'everyday'=>'DAILY' "
+            value="get_prop('clamav','UpdateWeekend','disabled')">
+            <label>LABEL_UPDATE_WEEKEND</label>
+        </field>
+
+        <field
+            type="literal"
+	    display="show_update_settings()"
+            value="">
+            <description>DESC_SECTIONBAR</description>
+        </field>
+
+        <field type="text" id="HTTPProxyServer" size="35"
+	    display="show_proxy_settings()"
+            validation="domain_name_or_ip()"
+            value="get_prop('clamav','HTTPProxyServer')">
+            <label>LABEL_PROXY_SERVER</label>
+            <description>DESC_PROXY_SERVER</description>
+        </field>
+
+        <field type="text" id="HTTPProxyPort" size="10"
+	    display="show_proxy_settings()"
+            validation="portnumber()"
+            value="get_prop('clamav','HTTPProxyPort')">
+            <label>LABEL_PROXY_PORT</label>
+        </field>
+
+        <field type="text" id="HTTPProxyUsername"
+	    display="show_proxy_settings()"
+            value="get_prop('clamav','HTTPProxyUsername')">
+            <label>LABEL_PROXY_USERNAME</label>
+        </field>
+
+        <field type="password" id="HTTPProxyPassword"
+	    display="show_proxy_settings()"
+            value="get_prop('clamav','HTTPProxyPassword')">
+            <label>LABEL_PROXY_PASSWORD</label>
+        </field>
+
+	<subroutine src="print_button('SAVE')" />
+
+    </page>
+</form>

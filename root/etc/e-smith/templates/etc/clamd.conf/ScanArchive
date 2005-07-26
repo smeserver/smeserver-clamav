@@ -1,0 +1,4 @@
+{
+# ClamAV can scan within archives and compressed files.
+    ($clamav{ScanArchive} || 'yes') eq 'yes' ? 'ScanArchive' : '#ScanArchive';
+}

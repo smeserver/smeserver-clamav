@@ -1,0 +1,4 @@
+{
+# Maximal depth directories are scanned at.
+    "MaxDirectoryRecursion $clamav{MaxDirectoryRecursion}";
+}

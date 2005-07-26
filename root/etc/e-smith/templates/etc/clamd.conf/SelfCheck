@@ -1,0 +1,4 @@
+{
+# Perform internal sanity check (database integrity and freshness).
+    "SelfCheck $clamav{SelfCheck}";
+}

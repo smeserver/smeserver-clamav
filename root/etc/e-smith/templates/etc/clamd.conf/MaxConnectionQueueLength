@@ -1,0 +1,4 @@
+{
+# Maximum length the queue of pending connections may grow to.
+    "MaxConnectionQueueLength $clamav{MaxConnectionQueueLength}";
+}

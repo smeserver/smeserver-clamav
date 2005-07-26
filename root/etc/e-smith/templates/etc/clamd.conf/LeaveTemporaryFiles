@@ -1,0 +1,5 @@
+{
+# Do not remove temporary files (for debug purposes).
+    ($clamav{LeaveTemporaryFiles} || 'no') eq 'yes' ? 
+	'LeaveTemporaryFiles' : '#LeaveTemporaryFiles';
+}

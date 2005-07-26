@@ -1,0 +1,7 @@
+{
+# TCP address.
+# By default we bind to INADDR_ANY, probably not wise.
+# Enable the following to provide some degree of protection
+# from the outside world.
+    $clamav{TCPAddr} ? "TCPAddr $clamav{TCPAddr}" : '#TCPAddr 127.0.0.1';
+}

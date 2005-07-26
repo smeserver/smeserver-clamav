@@ -1,0 +1,7 @@
+{
+# Use DNS to verify virus database version. Freshclam uses DNS TXT records
+# to verify database and software versions. We highly recommend enabling
+# this option.
+    "DNSDatabaseInfo $clamav{DNSDatabaseInfo}";
+}
+

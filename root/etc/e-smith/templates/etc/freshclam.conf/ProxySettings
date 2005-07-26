@@ -1,0 +1,14 @@
+{
+# Proxy settings
+
+    $OUT = '';
+
+    for ( qw(Server Port Username Password) )
+    {
+	my $name = "HTTPProxy$_";
+
+	next unless $clamav{$name};
+
+	$OUT .= "$name $clamav{$name}\n";
+    }
+}

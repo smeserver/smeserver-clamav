@@ -1,0 +1,4 @@
+{
+# TCP port address.
+    $clamav{TCPSocket} ? "TCPSocket $clamav{TCPSocket}" : '#TCPSocket 3310';
+}

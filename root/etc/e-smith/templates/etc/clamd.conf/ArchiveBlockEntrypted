@@ -1,0 +1,5 @@
+{ 
+# Mark encrypted archives as viruses (Encrypted.Zip, Encrypted.RAR).
+    ($clamav{ArchiveBlockEntrypted} || 'no') eq 'yes' ? 
+	'ArchiveBlockEntrypted' : '#ArchiveBlockEntrypted';
+}

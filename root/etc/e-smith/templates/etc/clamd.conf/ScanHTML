@@ -1,0 +1,5 @@
+{
+# Perform HTML normalisation and decryption of MS Script Encoder code.
+    ($clamav{ScanHTML} || 'yes') eq 'yes' ? 'ScanHTML' : '#ScanHTML';
+}
+

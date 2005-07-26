@@ -1,0 +1,54 @@
+{
+    my $min = substr(gmtime,14,2);
+
+    $OUT .= "# freshclam times during office hours\n";
+    my $FreqOffice = $clamav{UpdateOfficeHrs} || 'disabled';
+    if ($FreqOffice eq 'everyhour') {
+        $OUT .= $min."\t8-17\t*\t*\t1-5\troot\t/usr/bin/freshclam --quiet\n";
+    } elsif ($FreqOffice =~ /every(\d+)hrs/) {
+        $OUT .= $min."\t8-17/$1\t*\t*\t1-5\troot\t/usr/bin/freshclam --quiet\n";
+    } elsif ($FreqOffice eq 'everyday') {
+        $OUT .= $min."\t8\t*\t*\t1-5\troot\t/usr/bin/freshclam --quiet\n";
+    } else {
+        $OUT .= "# disabled\n";
+    }
+
+    $OUT .= "\n";
+    $OUT .= "# freshclam times outside office hours\n";
+    my $FreqOutside = $clamav{UpdateNonOfficeHrs} || 'disabled';
+    if ($FreqOutside eq 'everyhour') {
+        $OUT .= $min."\t0-7\t*\t*\t1-5\troot\t/usr/bin/freshclam --quiet\n";
+        $OUT .= $min."\t18-23\t*\t*\t1-5\troot\t/usr/bin/freshclam --quiet\n";
+    } elsif ($FreqOutside =~ /^every(\d+)hrs/) {
+        $OUT .= $min."\t0-7/$1\t*\t*\t1-5\troot\t/usr/bin/freshclam --quiet\n";
+        $OUT .= $min."\t18-23/$1\t*\t*\t1-5\troot\t/usr/bin/freshclam --quiet\n";
+    } elsif ($FreqOutside eq 'everyday') {
+        $OUT .= $min."\t0\t*\t*\t1-5\troot\t/usr/bin/freshclam --quiet\n";
+    } else {
+        $OUT .= "# disabled\n";
+    }
+
+    $OUT .= "\n";
+    $OUT .= "# freshclam times during the weekend\n";
+    my $FreqWeekend = $clamav{UpdateWeekend} || 'disabled';
+    if ($FreqWeekend eq 'everyhour') {
+        $OUT .= $min."\t*\t*\t*\t6-7\troot\t/usr/bin/freshclam --quiet\n";
+    } elsif ($FreqWeekend =~ /every(\d+)hrs/) {
+        $OUT .= $min."\t*/$1\t*\t*\t6-7\troot\t/usr/bin/freshclam --quiet\n";
+    } elsif ($FreqWeekend eq 'everyday') {
+        $OUT .= $min."\t8\t*\t*\t6-7\troot\t/usr/bin/freshclam --quiet\n";
+    } else {
+        $OUT .= "# disabled\n";
+    }
+
+    $OUT .= "\n";
+    $OUT .= "# clamscan filesystem scan\n";
+    my $ScanFreq = $clamav{FilesystemScan} || 'disabled';
+    if ($ScanFreq eq 'daily') {
+        $OUT .= $min."\t0\t*\t*\t*\troot\t/sbin/e-smith/clamscan\n";
+    } elsif ($ScanFreq eq 'weekly') {
+        $OUT .= $min."\t0\t*\t*\t0\troot\t/sbin/e-smith/clamscan\n";
+    } else {
+        $OUT .= "# disabled\n";
+    }
+}

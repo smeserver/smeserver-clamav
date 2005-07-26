@@ -1,0 +1,8 @@
+{
+# PE stands for Portable Executable - it's an executable file format used
+# in all 32-bit versions of Windows operating systems. This option allows
+# ClamAV to perform a deeper analysis of executable files and it's also
+# required for decompression of popular executable packers such as UPX, FSG,
+# and Petite.
+    ($clamav{ScanPE} || 'yes') eq 'yes' ? 'ScanPE' : '#ScanPE';
+}
