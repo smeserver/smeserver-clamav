@@ -2,7 +2,7 @@ Summary: e-smith module to configure clamav
 %define name e-smith-clamav
 Name: %{name}
 %define version 1.1.0
-%define release 04sme02
+%define release 05
 Version: %{version}
 Release: %{release}
 License: GPL
@@ -22,14 +22,11 @@ e-smith server enhancement to configure and run clamd and
 freshclam
 
 %changelog
-* Tue Jul 26 2005 Gordon Rowell <gordonr@gormand.com.au>
-- [1.1.0-04sme02]
-- Run freshclam with --quiet instead of --verbose [SF: 1245602]
-
-* Tue Jul 26 2005 Gordon Rowell <gordonr@gormand.com.au>
-- [1.1.0-04sme01]
+* Wed Jul 27 2005 Gordon Rowell <gordonr@gormand.com.au>
+- [1.1.0-05]
 - Exclude /proc, /sys and /usr/share/doc from scans
   [SF: 1243741, 1243831]
+- Run freshclam with --quiet instead of --verbose [SF: 1245602]
 
 * Fri Jul 22 2005 Charlie Brady <charlieb@e-smith.com>
 - [1.1.0-04]
