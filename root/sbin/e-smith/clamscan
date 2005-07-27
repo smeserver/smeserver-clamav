@@ -29,11 +29,15 @@ my $filesystems = $db->get_prop("clamav", "FilesytemScanFilesystems") || '/';
 
 my $MailReport = $db->get_prop("clamav", "FilesystemScanReportTo") || 'admin';
 
-open CLAMSCAN, "-|", 
-	"nice /usr/bin/clamscan" .
-	" --recursive --infected --stdout" .
- 	" --log /var/log/clamd/clamscan.log" .
-	" $filesystems 2>\&1";
+my $clamscan_opts = " --recursive --infected --stdout" .
+		    " --log /var/log/clamd/clamscan.log";
+
+my @exclude = split /,/, ($db->get_prop("clamav", "FilesytemScanExclude") || 
+			  "/proc,/sys,/usr/share/doc");
+
+$clamscan_opts .= " --exclude $_" for (@exclude);
+
+open CLAMSCAN, "-|", "nice /usr/bin/clamscan $clamscan_opts $filesystems 2>\&1";
 
 my @report = <CLAMSCAN>;
 close CLAMSCAN;
