@@ -2,7 +2,7 @@ Summary: e-smith module to configure clamav
 %define name e-smith-clamav
 Name: %{name}
 %define version 1.1.0
-%define release 05
+%define release 05sme01
 Version: %{version}
 Release: %{release}
 License: GPL
@@ -22,6 +22,11 @@ e-smith server enhancement to configure and run clamd and
 freshclam
 
 %changelog
+* Wed Jul 27 2005 Shad L. Lords <slords@mail.com>
+- [1.1.0-05sme01]
+- Include db entry to exclude /proc, /sys and 
+  /usr/share/doc from scans [SF: 1243741, 1243831]
+
 * Wed Jul 27 2005 Gordon Rowell <gordonr@gormand.com.au>
 - [1.1.0-05]
 - Exclude /proc, /sys and /usr/share/doc from scans
