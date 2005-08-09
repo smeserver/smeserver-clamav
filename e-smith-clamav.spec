@@ -2,7 +2,7 @@ Summary: e-smith module to configure clamav
 %define name e-smith-clamav
 Name: %{name}
 %define version 1.1.0
-%define release 05sme01
+%define release 05sme02
 Version: %{version}
 Release: %{release}
 License: GPL
@@ -22,6 +22,12 @@ e-smith server enhancement to configure and run clamd and
 freshclam
 
 %changelog
+* Mon Aug 8 2005 Gordon Rowell <gordonr@gormand.com.au>
+- [1.1.0-05sme02]
+- Add --move=$clamav{QuarantineDirectory} to clamscan,
+  exclude directory from being scanned, add database default 
+  and set permissions in spec file [SF: 1245655]
+
 * Wed Jul 27 2005 Shad L. Lords <slords@mail.com>
 - [1.1.0-05sme01]
 - Include db entry to exclude /proc, /sys and 
@@ -129,6 +135,7 @@ perl createlinks
 touch root/var/service/freshclam/down
 touch root/var/service/clamd/down
 mkdir -p root/var/log/clamd root/var/log/freshclam
+mkdir -p root/var/spool/clamav/quarantine
 
 %pre
 
@@ -144,6 +151,7 @@ rm -rf $RPM_BUILD_ROOT
   --file /var/service/clamd/run 'attr(0755,root,root)' \
   --file /var/service/clamd/log/run 'attr(0755,root,root)' \
   --dir /var/log/clamd 'attr(2750,smelog,smelog)' \
+  --dir /var/spool/clamav/quarantine 'attr(2750,clamav,clamav)' \
   --file /sbin/e-smith/freshclam-update-failed 'attr(0755,root,root)' \
   --file /sbin/e-smith/freshclam-update-ok 'attr(0755,root,root)' \
   --file /sbin/e-smith/clamscan 'attr(0755,root,root)' \

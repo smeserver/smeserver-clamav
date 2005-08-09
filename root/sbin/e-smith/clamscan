@@ -32,10 +32,17 @@ my $MailReport = $db->get_prop("clamav", "FilesystemScanReportTo") || 'admin';
 my $clamscan_opts = " --recursive --infected --stdout" .
 		    " --log /var/log/clamd/clamscan.log";
 
+my $quarantine = $db->get_prop("clamav", "QuarantineDirectory") || 
+		"/var/spool/clamav/quarantine";
+ 
 my @exclude = split /,/, ($db->get_prop("clamav", "FilesytemScanExclude") || 
 			  "/proc,/sys,/usr/share/doc");
 
+push @exclude, $quarantine;
+
 $clamscan_opts .= " --exclude $_" for (@exclude);
+
+$clamscan_opts .= " --move=$quarantine";
 
 open CLAMSCAN, "-|", "nice /usr/bin/clamscan $clamscan_opts $filesystems 2>\&1";
 
