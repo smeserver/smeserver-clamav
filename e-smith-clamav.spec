@@ -2,7 +2,7 @@ Summary: e-smith module to configure clamav
 %define name e-smith-clamav
 Name: %{name}
 %define version 1.1.0
-%define release 05sme02
+%define release 08
 Version: %{version}
 Release: %{release}
 License: GPL
@@ -22,15 +22,20 @@ e-smith server enhancement to configure and run clamd and
 freshclam
 
 %changelog
-* Mon Aug 8 2005 Gordon Rowell <gordonr@gormand.com.au>
-- [1.1.0-05sme02]
+* Tue Aug  9 2005 Gordon Rowell <gordonr@gormand.com.au>
+- [1.1.0-08]
 - Add --move=$clamav{QuarantineDirectory} to clamscan,
   exclude directory from being scanned, add database default 
   and set permissions in spec file [SF: 1245655]
 
-* Wed Jul 27 2005 Shad L. Lords <slords@mail.com>
-- [1.1.0-05sme01]
-- Include db entry to exclude /proc, /sys and 
+* Thu Aug  4 2005 Charlie Brady <charlieb@e-smith.com>
+- [1.1.0-07]
+- Remove freshclam runs from clamav crontab template - we
+  now run supervised freshclam instance. [SF: 1251944]
+
+* Thu Aug  4 2005 Shad Lords <slords@mail.com>
+- [1.1.0-06]
+- Include db entry to exclude /proc, /sys and
   /usr/share/doc from scans [SF: 1243741, 1243831]
 
 * Wed Jul 27 2005 Gordon Rowell <gordonr@gormand.com.au>
