@@ -1,20 +1,21 @@
-Summary: e-smith module to configure clamav
-%define name e-smith-clamav
+Summary: SME Server module to configure clamav
+%define name smeserver-clamav
 Name: %{name}
-%define version 1.1.0
-%define release 08sme02
+%define version 1.1.1
+%define release 01
 Version: %{version}
 Release: %{release}
 License: GPL
 Group: System Environment/Base
 Source: %{name}-%{version}.tar.gz
-Packager: e-smith developers <bugs@e-smith.com>
+Packager: Gordon Rowell <gordonr@gormand.com.au>
 BuildRoot: /var/tmp/%{name}-%{version}-%{release}-buildroot
 BuildArchitectures: noarch
 Requires: e-smith-lib
 Requires: clamav >= 0.83
 Requires: clamd >= 0.83
 Requires: clamav-db
+Obsoletes: e-smith-clamav
 BuildRequires: e-smith-devtools
 
 %description
@@ -22,6 +23,10 @@ e-smith server enhancement to configure and run clamd and
 freshclam
 
 %changelog
+* Thu Aug 18 2005 Gordon Rowell <gordonr@gormand.com.au>
+- [1.1.1-01]
+- Package renamed to smeserver-clamav [SF: 1263460]
+
 * Thu Aug 18 2005 Gordon Rowell <gordonr@gormand.com.au>
 - [1.1.0-08sme02]
 - Rename /sbin/e-smith/clamscan to smeserver-clamscan [SF: 1263460]
