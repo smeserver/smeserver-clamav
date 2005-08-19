@@ -2,7 +2,7 @@ Summary: SME Server module to configure clamav
 %define name smeserver-clamav
 Name: %{name}
 %define version 1.1.1
-%define release 01
+%define release 02
 Version: %{version}
 Release: %{release}
 License: GPL
@@ -15,6 +15,7 @@ Requires: e-smith-lib
 Requires: clamav >= 0.83
 Requires: clamd >= 0.83
 Requires: clamav-db
+Provides: e-smith-clamav
 Obsoletes: e-smith-clamav
 BuildRequires: e-smith-devtools
 
@@ -23,6 +24,10 @@ e-smith server enhancement to configure and run clamd and
 freshclam
 
 %changelog
+* Fri Aug 19 2005 Charlie Brady <charlieb@e-smith.com> 1.1.1-02
+- Add Provides: header, to satisfy any package which requires defunct
+  e-smith-clamav.
+
 * Thu Aug 18 2005 Gordon Rowell <gordonr@gormand.com.au>
 - [1.1.1-01]
 - Package renamed to smeserver-clamav [SF: 1263460]
