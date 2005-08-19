@@ -2,7 +2,7 @@ Summary: e-smith module to configure clamav
 %define name e-smith-clamav
 Name: %{name}
 %define version 1.1.0
-%define release 08
+%define release 08sme01
 Version: %{version}
 Release: %{release}
 License: GPL
@@ -22,6 +22,10 @@ e-smith server enhancement to configure and run clamd and
 freshclam
 
 %changelog
+* Thu Aug 18 2005 Gordon Rowell <gordonr@gormand.com.au>
+- [1.1.0-08sme01]
+- Disable quarantining by default, add panel toggle [SF: 1245655]
+
 * Tue Aug  9 2005 Gordon Rowell <gordonr@gormand.com.au>
 - [1.1.0-08]
 - Add --move=$clamav{QuarantineDirectory} to clamscan,

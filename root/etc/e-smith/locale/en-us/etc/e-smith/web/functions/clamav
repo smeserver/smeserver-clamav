@@ -30,6 +30,16 @@
 	    scanned for viruses.  A report of any found viruses will be
 	    emailed to the administrator.]]></trans>
     </entry>
+
+    <entry>
+        <base>LABEL_QUARANTINE</base>
+        <trans>Quarantine infected files</trans>
+    </entry>
+    <entry>
+        <base>DESC_QUARANTINE</base>
+	<trans>Should infected files be moved to the quarantine area?</trans>
+    </entry>
+
     <entry>
         <base>LABEL_DATABASE_MIRROR</base>
         <trans>Select country for database updates</trans>

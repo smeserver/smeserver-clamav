@@ -109,6 +109,7 @@ sub change_settings {
     my $status = $q->param('status');
 
     my $FilesystemScan = ( $q->param('FilesystemScan') || 'disabled' );
+    my $Quarantine = ( $q->param('Quarantine') || 'disabled' );
 
     my $DatabaseMirror = ( $q->param('DatabaseMirror') || 'db.us.clamav.net' );
     my $UpdateOfficeHrs = ( $q->param('UpdateOfficeHrs') || 'disabled' );
@@ -126,6 +127,7 @@ sub change_settings {
     $clamav->merge_props(
 	    status => $status,
 	    FilesystemScan => $FilesystemScan,
+	    Quarantine => $Quarantine,
 	    DatabaseMirror => $DatabaseMirror,
 	    UpdateOfficeHrs => $UpdateOfficeHrs,
 	    UpdateNonOfficeHrs => $UpdateNonOfficeHrs,

@@ -45,6 +45,13 @@ __DATA__
             <description>DESC_FILESYSTEM_SCAN_PERIOD</description>
         </field>
 
+        <field type="select"
+            id="Quarantine"
+            options="'disabled'=>'DISABLED', 'enabled'=>'ENABLED' "
+            value="get_prop('clamav','Quarantine','disabled')">
+            <label>LABEL_QUARANTINE</label>
+	</field>
+
         <field
             type="literal"
             value="get_clam_versions()">
