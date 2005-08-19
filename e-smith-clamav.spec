@@ -2,7 +2,7 @@ Summary: e-smith module to configure clamav
 %define name e-smith-clamav
 Name: %{name}
 %define version 1.1.0
-%define release 08sme01
+%define release 08sme02
 Version: %{version}
 Release: %{release}
 License: GPL
@@ -22,6 +22,10 @@ e-smith server enhancement to configure and run clamd and
 freshclam
 
 %changelog
+* Thu Aug 18 2005 Gordon Rowell <gordonr@gormand.com.au>
+- [1.1.0-08sme02]
+- Rename /sbin/e-smith/clamscan to smeserver-clamscan [SF: 1263460]
+
 * Thu Aug 18 2005 Gordon Rowell <gordonr@gormand.com.au>
 - [1.1.0-08sme01]
 - Disable quarantining by default, add panel toggle [SF: 1245655]
@@ -163,7 +167,7 @@ rm -rf $RPM_BUILD_ROOT
   --dir /var/spool/clamav/quarantine 'attr(2750,clamav,clamav)' \
   --file /sbin/e-smith/freshclam-update-failed 'attr(0755,root,root)' \
   --file /sbin/e-smith/freshclam-update-ok 'attr(0755,root,root)' \
-  --file /sbin/e-smith/clamscan 'attr(0755,root,root)' \
+  --file /sbin/e-smith/smeserver-clamscan 'attr(0755,root,root)' \
   > %{name}-%{version}-%{release}-filelist
 
 %clean 
