@@ -2,7 +2,7 @@ Summary: SME Server module to configure clamav
 %define name smeserver-clamav
 Name: %{name}
 %define version 1.1.1
-%define release 02
+%define release 03
 Version: %{version}
 Release: %{release}
 License: GPL
@@ -24,6 +24,9 @@ e-smith server enhancement to configure and run clamd and
 freshclam
 
 %changelog
+* Sat Aug 20 2005 Gordon Rowell <gordonr@gormand.com.au> 1.1.1-03
+- Don't scan quarantine area, even if quarantining is disabled [SF: 1245655]
+
 * Fri Aug 19 2005 Charlie Brady <charlieb@e-smith.com> 1.1.1-02
 - Add Provides: header, to satisfy any package which requires defunct
   e-smith-clamav.
