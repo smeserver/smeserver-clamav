@@ -155,11 +155,12 @@
     </entry>
     <entry>
         <base>LABEL_QUARANTINE</base>
-        <trans>Fichiers infectÃ©s mis en quarantaine</trans>
+        <trans>Fichiers infectés mis en quarantaine</trans>
     </entry>
    <entry>
         <base>DESC_QUARANTINE</base>
-        <trans>Les fichiers infectÃ©s doivent ils Ãªtre
-dÃ©placÃ©s dans la zone de quarantaine ?</trans>
+        <trans>Les fichiers infectés doivent ils être
+		déplacés dans la zone de quarantaine ?
+	</trans>
     </entry>
 </lexicon> 
