@@ -1,8 +1,8 @@
 Summary: SME Server module to configure clamav
 %define name smeserver-clamav
 Name: %{name}
-%define version 1.1.1
-%define release 06
+%define version 1.1.2
+%define release 01
 Version: %{version}
 Release: %{release}
 License: GPL
@@ -24,6 +24,10 @@ e-smith server enhancement to configure and run clamd and
 freshclam
 
 %changelog
+* Mon Sep 26 2005 Gordon Rowell <gordonr@gormand.com.au> 1.1.2-01
+- Roll patches to 1.1.1-06
+- Add German L10N
+
 * Mon Sep 26 2005 Gordon Rowell <gordonr@gormand.com.au> 1.1.1-06
 - Exclude /var and all of /usr/share (not just /usr/share/doc) from
   filesystem scan [SF: 1304217]
