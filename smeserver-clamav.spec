@@ -2,7 +2,7 @@ Summary: SME Server module to configure clamav
 %define name smeserver-clamav
 Name: %{name}
 %define version 1.1.2
-%define release 01
+%define release 02
 Version: %{version}
 Release: %{release}
 License: GPL
@@ -24,6 +24,9 @@ e-smith server enhancement to configure and run clamd and
 freshclam
 
 %changelog
+* Mon Sep 26 2005 Gordon Rowell <gordonr@gormand.com.au> 1.1.2-02
+- Added Italian L10N - Thanks Filippo Carletti [SF: 1309266]
+
 * Mon Sep 26 2005 Gordon Rowell <gordonr@gormand.com.au> 1.1.2-01
 - Roll patches to 1.1.1-06
 - Add German L10N
