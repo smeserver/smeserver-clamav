@@ -1,0 +1,1 @@
+{ $OUT = ($clamd{MemLimit} > "80000000") ? $clamd{MemLimit} : "80000000" }

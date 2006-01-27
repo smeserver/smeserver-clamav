@@ -2,7 +2,7 @@ Summary: SME Server module to configure clamav
 %define name smeserver-clamav
 Name: %{name}
 %define version 1.1.2
-%define release 03
+%define release 07
 Version: %{version}
 Release: %{release}
 License: GPL
@@ -24,6 +24,20 @@ e-smith server enhancement to configure and run clamd and
 freshclam
 
 %changelog
+* Wed Jan 18 2006 Gordon Rowell <gordonr@gormand.com.au> 1.1.2-07
+- Expand MEMLIMIT in bootstrap-console-save (and don't attempt to
+  restart the service there)
+
+* Wed Jan 18 2006 Gordon Rowell <gordonr@gormand.com.au> 1.1.2-06
+- Change back to softlimit -a [SME: 426]
+
+* Wed Jan 18 2006 Gordon Rowell <gordonr@gormand.com.au> 1.1.2-05
+- Set db default for clamd{MemLimit}==80M and use it in the run script
+- Expand templates in events rather than run file [SME: 426]
+
+* Mon Oct 17 2005 Gordon Rowell <gordonr@gormand.com.au> 1.1.2-04
+- Fix typos in smeserver-clamscan [SF: 1304217]
+
 * Fri Oct 14 2005 Gordon Rowell <gordonr@gormand.com.au> 1.1.2-03
 - Move all L10Ns to smeserver-locale [SF: 1309520]
 
@@ -175,6 +189,7 @@ freshclam
 
 %prep
 %setup
+
 rm -rf root/etc/e-smith/locale/de
 rm -rf root/etc/e-smith/locale/fr
 rm -rf root/etc/e-smith/locale/es
@@ -184,6 +199,7 @@ rm -rf root/etc/e-smith/locale/it
 perl createlinks
 touch root/var/service/freshclam/down
 touch root/var/service/clamd/down
+mkdir -p root/var/service/clamd/env
 mkdir -p root/var/log/clamd root/var/log/freshclam
 mkdir -p root/var/spool/clamav/quarantine
 

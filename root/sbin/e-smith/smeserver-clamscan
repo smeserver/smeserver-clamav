@@ -25,7 +25,7 @@ use esmith::ConfigDB;
 
 my $db = esmith::ConfigDB->open_ro or die "Couldn't open ConfigDB";
 
-my $filesystems = $db->get_prop("clamav", "FilesytemScanFilesystems") || '/';
+my $filesystems = $db->get_prop("clamav", "FilesystemScanFilesystems") || '/';
 
 my $MailReport = $db->get_prop("clamav", "FilesystemScanReportTo") || 'admin';
 
@@ -35,7 +35,7 @@ my $clamscan_opts = " --recursive --infected --stdout" .
 my $quarantine_dir = $db->get_prop("clamav", "QuarantineDirectory") || 
 		"/var/spool/clamav/quarantine";
 
-my @exclude = split /,/, ($db->get_prop("clamav", "FilesytemScanExclude") || 
+my @exclude = split /,/, ($db->get_prop("clamav", "FilesystemScanExclude") || 
 			  "/proc,/sys,/usr/share/doc");
 
 push @exclude, $quarantine_dir;

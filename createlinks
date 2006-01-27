@@ -18,6 +18,11 @@ foreach (qw(freshclam.conf clamd.conf cron.d/clamav))
 
 my $event = "email-update";
 
+foreach my $event (qw(bootstrap-console-save email-update clamav-update))
+{
+    templates2events("/var/service/clamd/env/MEMLIMIT", $event);
+}
+
 foreach my $event (qw(email-update clamav-update))
 {
     # XXX - FIXME - Could we just sighup clamd here?
