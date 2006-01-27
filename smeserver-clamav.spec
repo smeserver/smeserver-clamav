@@ -2,7 +2,7 @@ Summary: SME Server module to configure clamav
 %define name smeserver-clamav
 Name: %{name}
 %define version 1.1.2
-%define release 07
+%define release 08
 Version: %{version}
 Release: %{release}
 License: GPL
@@ -24,6 +24,9 @@ e-smith server enhancement to configure and run clamd and
 freshclam
 
 %changelog
+* Fri Jan 27 2006 Gordon Rowell <gordonr@gormand.com.au> 1.1.2-08
+- Bump release number to ensure patch is in CVS
+
 * Wed Jan 18 2006 Gordon Rowell <gordonr@gormand.com.au> 1.1.2-07
 - Expand MEMLIMIT in bootstrap-console-save (and don't attempt to
   restart the service there)
