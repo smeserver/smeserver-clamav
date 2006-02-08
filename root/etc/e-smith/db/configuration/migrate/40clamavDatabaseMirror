@@ -1,0 +1,7 @@
+{
+    my $clamav = $DB->get('clamav') or return;
+    
+    return unless ($clamav->prop('DatabaseMirror') eq 'db.us.clamav.net');
+    
+    $clamav->set_prop('DatabaseMirror','db.local.clamav.net');
+}
