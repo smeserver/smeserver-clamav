@@ -2,7 +2,7 @@ Summary: SME Server module to configure clamav
 %define name smeserver-clamav
 Name: %{name}
 %define version 1.1.2
-%define release 09
+%define release 10
 Version: %{version}
 Release: %{release}
 License: GPL
@@ -24,6 +24,9 @@ e-smith server enhancement to configure and run clamd and
 freshclam
 
 %changelog
+* Tue Mar 14 2006 Gordon Rowell <gordonr@gormand.com.au> 1.1.2-10
+- Restart crond in clamav-update so cron notices cron.d/clamav [SME: 966]
+
 * Wed Feb 8 2006 Gavin Weight <gweight@gmail.com> 1.1.2-09
 - Added migrate fragment for clamav DatabaseMirror. [SME: 83]
 

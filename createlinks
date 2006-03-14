@@ -29,6 +29,11 @@ foreach my $event (qw(email-update clamav-update))
     safe_symlink("restart", "root/etc/e-smith/events/$event/services2adjust/clamd");
 }
 
+for my $event (qw(clamav-update))
+{
+    safe_symlink("restart", "root/etc/e-smith/events/$event/services2adjust/crond");
+}
+
 safe_symlink("/var/service/freshclam", "root/service/freshclam");
 safe_symlink("/var/service/clamd", "root/service/clamd");
 
