@@ -1,8 +1,8 @@
 Summary: SME Server module to configure clamav
 %define name smeserver-clamav
 Name: %{name}
-%define version 1.1.2
-%define release 10
+%define version 1.2.0
+%define release 01
 Version: %{version}
 Release: %{release}
 License: GPL
@@ -24,6 +24,9 @@ e-smith server enhancement to configure and run clamd and
 freshclam
 
 %changelog
+* Wed Mar 15 2006 Charlie Brady <charlie_brady@mitel.com> 1.2.0-01
+- Roll stable stream version. [SME: 1016]
+
 * Tue Mar 14 2006 Gordon Rowell <gordonr@gormand.com.au> 1.1.2-10
 - Restart crond in clamav-update so cron notices cron.d/clamav [SME: 966]
 
@@ -198,11 +201,6 @@ freshclam
 
 %prep
 %setup
-
-rm -rf root/etc/e-smith/locale/de
-rm -rf root/etc/e-smith/locale/fr
-rm -rf root/etc/e-smith/locale/es
-rm -rf root/etc/e-smith/locale/it
 
 %build
 perl createlinks
