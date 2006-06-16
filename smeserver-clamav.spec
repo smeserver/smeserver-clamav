@@ -2,7 +2,7 @@ Summary: SME Server module to configure clamav
 %define name smeserver-clamav
 Name: %{name}
 %define version 1.2.0
-%define release 01
+%define release 02
 Version: %{version}
 Release: %{release}
 License: GPL
@@ -24,6 +24,9 @@ e-smith server enhancement to configure and run clamd and
 freshclam
 
 %changelog
+* Fri Jun 16 2006 Gordon Rowell <gordonr@gormand.com.au> 1.2.0-02
+- Fix typo in ArchiveBlockEntrypted [SME: 1584]
+
 * Wed Mar 15 2006 Charlie Brady <charlie_brady@mitel.com> 1.2.0-01
 - Roll stable stream version. [SME: 1016]
 
