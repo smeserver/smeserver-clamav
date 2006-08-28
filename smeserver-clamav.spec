@@ -24,6 +24,9 @@ e-smith server enhancement to configure and run clamd and
 freshclam
 
 %changelog
+* Sun Aug 27 2006 Charlie Brady <charlieb@e-smith.com> 1.2.0-03
+- Fix --exclude arg syntax. [SME: 1889]
+
 * Fri Jun 16 2006 Gordon Rowell <gordonr@gormand.com.au> 1.2.0-02
 - Fix typo in ArchiveBlockEntrypted [SME: 1584]
 
