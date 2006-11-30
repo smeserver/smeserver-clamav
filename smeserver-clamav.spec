@@ -2,7 +2,7 @@ Summary: SME Server module to configure clamav
 %define name smeserver-clamav
 Name: %{name}
 %define version 1.2.0
-%define release 02
+%define release 03
 Version: %{version}
 Release: %{release}
 License: GPL
@@ -24,6 +24,9 @@ e-smith server enhancement to configure and run clamd and
 freshclam
 
 %changelog
+* Wed Nov 29 2006 Gordon Rowell <gordonr@gormand.com.au> 1.2.0-04
+- Restrict filesystem scan to /home/e-smith/files by default [SME: 2082]
+
 * Sun Aug 27 2006 Charlie Brady <charlieb@e-smith.com> 1.2.0-03
 - Fix --exclude arg syntax. [SME: 1889]
 
