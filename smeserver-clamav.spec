@@ -2,7 +2,7 @@ Summary: SME Server module to configure clamav
 %define name smeserver-clamav
 Name: %{name}
 %define version 1.2.0
-%define release 03
+%define release 04
 Version: %{version}
 Release: %{release}
 License: GPL
