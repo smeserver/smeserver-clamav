@@ -2,7 +2,7 @@ Summary: SME Server module to configure clamav
 %define name smeserver-clamav
 Name: %{name}
 %define version 1.2.0
-%define release 5
+%define release 6
 Version: %{version}
 Release: %{release}
 Packager: %{_packager}
@@ -24,6 +24,11 @@ e-smith server enhancement to configure and run clamd and
 freshclam
 
 %changelog
+* Wed Dec 13 2006 Federico Simoncelli <federico.simoncelli@gmail.com> 1.2.0-6
+- Added support for options: max-ratio, no-html, no-mail. [SME: 2024]
+- Redirected the stderr output to /var/log/clamd/smeserver-clamscan.log.
+  [SME: 2004]
+
 * Thu Dec 07 2006 Shad L. Lords <slords@mail.com>
 - Update to new release naming.  No functional changes.
 - Make Packager generic
