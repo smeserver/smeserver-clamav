@@ -17,6 +17,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307  USA
 #----------------------------------------------------------------------
 
-mail -s 'freshclam: Update failed' admin </dev/null
+tail -50 /var/log/freshclam/current | sed -n '${H;x;p};/----------/{h;b};H' | tai64nlocal | \
+     mail -s 'freshclam: Update failed' admin
 
 exit 0
