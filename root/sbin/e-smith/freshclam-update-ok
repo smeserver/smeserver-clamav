@@ -17,7 +17,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307  USA
 #----------------------------------------------------------------------
 
-#tail -200 /var/log/freshclam/current | sed -n '${x;p};/freshclam daemon/{h;b};H' | tai64nlocal | \
+#tail -200 /var/log/freshclam/current | sed -n '${/---/bz;H;:z;x;p};:r;/---/{n;/---/br;h;b};H' | tai64nlocal | \
 #     mail -s 'freshclam: Virus patterns updated' admin
 
 exit 0

@@ -2,7 +2,7 @@ Summary: SME Server module to configure clamav
 %define name smeserver-clamav
 Name: %{name}
 %define version 1.2.0
-%define release 8
+%define release 9
 Version: %{version}
 Release: %{release}
 Packager: %{_packager}
@@ -24,6 +24,9 @@ e-smith server enhancement to configure and run clamd and
 freshclam
 
 %changelog
+* Mon Feb 12 2007 Shad L. Lords <slords@mail.com> 1.2.0-9
+- Improve sed expression for freshclam failures [SME: 1686]
+
 * Mon Feb 12 2007 Shad L. Lords <slords@mail.com> 1.2.0-8
 - Allow clamav to read freshclam update log [SME: 1686]
 
