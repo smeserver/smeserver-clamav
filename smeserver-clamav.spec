@@ -2,7 +2,7 @@ Summary: SME Server module to configure clamav
 %define name smeserver-clamav
 Name: %{name}
 %define version 1.2.0
-%define release 7
+%define release 8
 Version: %{version}
 Release: %{release}
 Packager: %{_packager}
@@ -24,6 +24,9 @@ e-smith server enhancement to configure and run clamd and
 freshclam
 
 %changelog
+* Mon Feb 12 2007 Shad L. Lords <slords@mail.com> 1.2.0-8
+- Allow clamav to read freshclam update log [SME: 1686]
+
 * Fri Jan 26 2007 Shad L. Lords <slords@mail.com> 1.2.0-7
 - Provide more feedback on freshclam events [SME: 1686]
 
@@ -241,7 +244,7 @@ rm -rf $RPM_BUILD_ROOT
 /sbin/e-smith/genfilelist $RPM_BUILD_ROOT \
   --file /var/service/freshclam/run 'attr(0755,root,root)' \
   --file /var/service/freshclam/log/run 'attr(0755,root,root)' \
-  --dir /var/log/freshclam 'attr(2750,smelog,smelog)' \
+  --dir /var/log/freshclam 'attr(2750,smelog,clamav)' \
   --file /var/service/clamd/run 'attr(0755,root,root)' \
   --file /var/service/clamd/log/run 'attr(0755,root,root)' \
   --dir /var/log/clamd 'attr(2750,smelog,smelog)' \
