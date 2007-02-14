@@ -1,4 +1,1 @@
-{
-# Enable debug messages in libclamav.
-    ($clamav{Debug} || 'no') eq 'yes' ? 'Debug' : '#Debug';
-}
+Debug { $clamav{Debug} || 'no' }

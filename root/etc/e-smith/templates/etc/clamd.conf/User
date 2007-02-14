@@ -1,2 +1,2 @@
 User clamav
-AllowSupplementaryGroups
+AllowSupplementaryGroups yes

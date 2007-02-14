@@ -1,4 +1,1 @@
-{
-# This option enables scanning of Microsoft Office document macros.
-    ($clamav{ScanOLE2} || 'yes') eq 'yes' ? 'ScanOLE2' : '#ScanOLE2';
-}
+ScanOLE2 { $clamav{ScanOLE2} || 'yes' }

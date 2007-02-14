@@ -24,4 +24,4 @@ exec 2>&1
 
 /sbin/e-smith/expand-template /etc/freshclam.conf
 
-exec /usr/bin/freshclam --daemon --quiet
+exec /usr/bin/freshclam --daemon

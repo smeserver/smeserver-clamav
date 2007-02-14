@@ -1,5 +1,0 @@
-{
-# This option disables log file locking.
-    ($clamav{LogFileUnlock} || 'yes') eq 'yes' ? 
-	'LogFileUnlock' : '#LogFileUnlock';
-}

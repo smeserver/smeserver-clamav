@@ -2,7 +2,7 @@ Summary: SME Server module to configure clamav
 %define name smeserver-clamav
 Name: %{name}
 %define version 1.2.0
-%define release 10
+%define release 11
 Version: %{version}
 Release: %{release}
 Packager: %{_packager}
@@ -12,8 +12,8 @@ Source: %{name}-%{version}.tar.gz
 BuildRoot: /var/tmp/%{name}-%{version}-%{release}-buildroot
 BuildArchitectures: noarch
 Requires: e-smith-lib
-Requires: clamav >= 0.83
-Requires: clamd >= 0.83
+Requires: clamav >= 0.90
+Requires: clamd >= 0.90
 Requires: clamav-db
 Provides: e-smith-clamav
 Obsoletes: e-smith-clamav
@@ -24,6 +24,9 @@ e-smith server enhancement to configure and run clamd and
 freshclam
 
 %changelog
+* Wed Feb 14 2007 Shad L. Lords <slords@mail.com> 1.2.0-11
+- Update for clamav v0.90
+
 * Tue Feb 13 2007 Shad L. Lords <slords@mail.com> 1.2.0-10
 - Improve algorithm for displaying errors [SME: 1686]
 

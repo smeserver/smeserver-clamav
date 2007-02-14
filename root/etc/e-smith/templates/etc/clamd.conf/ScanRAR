@@ -1,8 +1,0 @@
-{
-# Due to license issues libclamav does not support RAR 3.0 archives (only the
-# old 2.0 format is supported). Because some users report stability problems
-# with unrarlib it's disabled by default and you must uncomment the directive
-# below to enable RAR 2.0 support.
-    ($clamav{ScanRAR} || 'no') eq 'yes' ? 'ScanRAR' : '#ScanRAR';
-}
-
