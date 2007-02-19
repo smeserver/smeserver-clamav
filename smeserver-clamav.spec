@@ -25,7 +25,7 @@ freshclam
 
 %changelog
 * Wed Feb 14 2007 Shad L. Lords <slords@mail.com> 1.2.0-11
-- Update for clamav v0.90
+- Update for clamav v0.90 [SME: 2508]
 
 * Tue Feb 13 2007 Shad L. Lords <slords@mail.com> 1.2.0-10
 - Improve algorithm for displaying errors [SME: 1686]
