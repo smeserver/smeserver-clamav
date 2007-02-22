@@ -2,7 +2,7 @@ Summary: SME Server module to configure clamav
 %define name smeserver-clamav
 Name: %{name}
 %define version 1.2.0
-%define release 11
+%define release 12
 Version: %{version}
 Release: %{release}
 Packager: %{_packager}
@@ -24,6 +24,9 @@ e-smith server enhancement to configure and run clamd and
 freshclam
 
 %changelog
+* Wed Feb 21 2007 Shad L. Lords <slords@mail.com> 1.2.0-12
+- Up memory limit for clamd [SME: 2528]
+
 * Wed Feb 14 2007 Shad L. Lords <slords@mail.com> 1.2.0-11
 - Update for clamav v0.90 [SME: 2508]
 

@@ -1,0 +1,5 @@
+{
+    my $clamd = $DB->get('clamd');
+    return unless $clamd;
+    $clamd->set_prop('MemLimit', 120000000) if $clamd->prop('MemLimit') < 120000000;
+}
