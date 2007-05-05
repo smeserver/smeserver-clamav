@@ -4,8 +4,7 @@ Name: %{name}
 %define version 1.2.0
 %define release 13
 Version: %{version}
-Release: %{release}
-Packager: %{_packager}
+Release: %{release}%{?dist}
 License: GPL
 Group: System Environment/Base
 Source: %{name}-%{version}.tar.gz
@@ -24,6 +23,9 @@ e-smith server enhancement to configure and run clamd and
 freshclam
 
 %changelog
+* Sun Apr 29 2007 Shad L. Lords <slords@mail.com>
+- Clean up spec so package can be built by koji/plague
+
 * Wed Apr 18 2007 Shad L. Lords <slords@mail.com> 1.2.0-13
 - Up memory limit for clamd again [SME: 2743]
 
