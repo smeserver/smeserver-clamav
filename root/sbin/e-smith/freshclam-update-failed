@@ -17,7 +17,10 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307  USA
 #----------------------------------------------------------------------
 
-tac /var/log/freshclam/current | sed -n '/Downloading/d;1,/process started/p;/process started/q' | tac | tai64nlocal | \
-     mail -s 'freshclam: Update failed' admin
+/usr/bin/tac /var/log/freshclam/current | \
+ /bin/sed -n '/Downloading/d;1,/process started/p;/process started/q' | \
+  /usr/bin/tac | \
+   /usr/local/bin/tai64nlocal | \
+    /bin/mail -s 'freshclam: Update failed' admin
 
 exit 0

@@ -2,7 +2,7 @@ Summary: SME Server module to configure clamav
 %define name smeserver-clamav
 Name: %{name}
 %define version 1.2.0
-%define release 13
+%define release 14
 Version: %{version}
 Release: %{release}%{?dist}
 License: GPL
@@ -23,6 +23,10 @@ e-smith server enhancement to configure and run clamd and
 freshclam
 
 %changelog
+* Fri Jun 08 2007 Charlie Brady <charlie_brady@mitel.com> 1.2.0-14
+- Use full paths in update-failed script - tai64nlocal was not
+  being found in $PATH. [SME: 1686]
+
 * Sun Apr 29 2007 Shad L. Lords <slords@mail.com>
 - Clean up spec so package can be built by koji/plague
 
