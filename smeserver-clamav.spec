@@ -2,7 +2,7 @@ Summary: SME Server module to configure clamav
 %define name smeserver-clamav
 Name: %{name}
 %define version 1.2.0
-%define release 15
+%define release 16
 Version: %{version}
 Release: %{release}%{?dist}
 License: GPL
@@ -23,6 +23,9 @@ e-smith server enhancement to configure and run clamd and
 freshclam
 
 %changelog
+* Mon Jan 07 2008 Stephen Noble <support@dungog.net> 1.2.0-16
+- Cosmetic removal of word entire on panel [SME: 3483]
+
 * Thu Sep 06 2007  Filippo Carletti <filippo.carletti@gmail.com> 1.2.0-15
 - Fix freshclam.conf permissions [SME: 3375]
 
