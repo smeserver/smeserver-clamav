@@ -20,13 +20,13 @@
     </entry>
     <entry>
         <base>LABEL_FILESYSTEM_SCAN_PERIOD</base>
-        <trans>Scan entire filesystem</trans>
+        <trans>Scan filesystem</trans>
     </entry>
     <entry>
         <base>DESC_FILESYSTEM_SCAN_PERIOD</base>
         <trans><![CDATA[
 	    <h2>General Settings</h2>
-	    If this option is enabled then the entire filesystem will be 
+	    If this option is enabled then the filesystem will be 
 	    scanned for viruses.  A report of any found viruses will be
 	    emailed to the administrator.]]></trans>
     </entry>
