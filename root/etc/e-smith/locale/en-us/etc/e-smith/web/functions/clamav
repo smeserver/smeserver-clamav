@@ -122,10 +122,6 @@
       <trans>Daily</trans>
     </entry>
     <entry>
-      <base>WEEKLY</base>
-      <trans>Weekly</trans>
-    </entry>
-    <entry>
 	<base>DISABLED</base>
 	<trans>Disabled</trans>
     </entry>
