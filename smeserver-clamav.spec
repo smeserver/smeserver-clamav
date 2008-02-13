@@ -2,7 +2,7 @@ Summary: SME Server module to configure clamav
 %define name smeserver-clamav
 Name: %{name}
 %define version 1.2.0
-%define release 17
+%define release 18
 Version: %{version}
 Release: %{release}%{?dist}
 License: GPL
@@ -14,6 +14,7 @@ Requires: e-smith-lib
 Requires: clamav >= 0.90
 Requires: clamd >= 0.90
 Requires: clamav-db
+Requires: e-smith-formmagick >= 1.4.0-9
 Provides: e-smith-clamav
 Obsoletes: e-smith-clamav
 BuildRequires: e-smith-devtools
@@ -23,6 +24,9 @@ e-smith server enhancement to configure and run clamd and
 freshclam
 
 %changelog
+* Wed Feb 13 2008 Stephen Noble <support@dungog.net> 1.2.0-18
+- Remove <base> tags now in general [SME: 3915]
+
 * Sun Feb 10 2008 Stephen Noble <support@dungog.net> 1.2.0-17
 - Remove duplicate <base> entries [SME: 3890]
 

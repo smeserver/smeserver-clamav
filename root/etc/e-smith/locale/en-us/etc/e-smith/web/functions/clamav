@@ -122,18 +122,6 @@
       <trans>Daily</trans>
     </entry>
     <entry>
-	<base>DISABLED</base>
-	<trans>Disabled</trans>
-    </entry>
-    <entry>
-	<base>ENABLED</base>
-	<trans>Enabled</trans>
-    </entry>
-    <entry>
-	<base>SAVE</base>
-	<trans>Save</trans>
-    </entry>
-    <entry>
         <base>INVALID_PROXY_SERVER</base>
         <trans>Please enter an Internet domain name or an IP address
         for your http proxy server. (Do not include http://).</trans>
@@ -149,14 +137,5 @@
     <entry>
         <base>ERROR_UPDATING</base>
         <trans>Error occurred while updating system configuration.</trans>
-    </entry>
-
-    <entry>
-        <base>DESC_SECTIONBAR</base>
-        <trans>
-            <![CDATA[
-            <hr class="sectionbar"/>
-            ]]>
-        </trans>
     </entry>
 </lexicon>  
