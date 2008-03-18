@@ -2,7 +2,7 @@ Summary: SME Server module to configure clamav
 %define name smeserver-clamav
 Name: %{name}
 %define version 1.2.0
-%define release 18
+%define release 19
 Version: %{version}
 Release: %{release}%{?dist}
 License: GPL
@@ -24,6 +24,9 @@ e-smith server enhancement to configure and run clamd and
 freshclam
 
 %changelog
+* Tue Mar 18 2008 Shad L. Lords <slords@mail.com> 1.2.0-19
+- Fix clamav version string [SME: 4060]
+
 * Wed Feb 13 2008 Stephen Noble <support@dungog.net> 1.2.0-18
 - Remove <base> tags now in general [SME: 3915]
 

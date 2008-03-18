@@ -148,7 +148,7 @@ sub get_clam_versions
 {
     my ($fm) = @_;
 
-    my $version = `/usr/bin/clamscan -V`;
+    my $version = `/usr/bin/freshclam -V`;
     chomp $version;
     $version =~ s/^ClamAV //;
  
