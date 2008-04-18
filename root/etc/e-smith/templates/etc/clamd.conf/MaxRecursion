@@ -3,5 +3,5 @@
 # file, all files within it will also be scanned. This options specifies how
 # deep the process should be continued.
 # Value of 0 disables the limit.
-    "ArchiveMaxRecursion $clamav{ArchiveMaxRecursion}";
+    "MaxRecursion $clamav{MaxRecursion}";
 }

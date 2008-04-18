@@ -1,0 +1,15 @@
+{
+    my $smtpd = $DB->get('clamav') or return;
+
+    if (my $maxFileSize = $DB->get_prop_and_delete('clamav', 'ArchiveMaxFileSize')) {
+        $smtpd->merge_props('MaxFileSize', $maxFileSize);
+    }
+
+    if (my $maxRecursion = $DB->get_prop_and_delete('clamav', 'ArchiveMaxRecursion')) {
+        $smtpd->merge_props('MaxRecursion', $maxRecursion);
+    }
+
+    if (my $maxFiles = $DB->get_prop_and_delete('clamav', 'ArchiveMaxFiles')) {
+        $smtpd->merge_props('MaxFiles', $maxFiles);
+    }
+}

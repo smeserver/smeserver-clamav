@@ -1,5 +1,5 @@
 {
 # Files in archives larger than this limit won't be scanned.
 # Value of 0 disables the limit.
-    "ArchiveMaxFileSize $clamav{ArchiveMaxFileSize}";
+    "MaxFileSize $clamav{MaxFileSize}";
 }
