@@ -2,7 +2,7 @@ Summary: SME Server module to configure clamav
 %define name smeserver-clamav
 Name: %{name}
 %define version 1.2.0
-%define release 19
+%define release 20
 Version: %{version}
 Release: %{release}%{?dist}
 License: GPL
@@ -24,6 +24,9 @@ e-smith server enhancement to configure and run clamd and
 freshclam
 
 %changelog
+* Fri Apr 18 2008 Jonathan Martens <smeserver-contribs@snetram.nl> 1.2.0-20
+- Move cron template from cron.d to crontab [SME: 1047]
+
 * Tue Mar 18 2008 Shad L. Lords <slords@mail.com> 1.2.0-19
 - Fix clamav version string [SME: 4060]
 
