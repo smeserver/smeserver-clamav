@@ -2,7 +2,7 @@ Summary: SME Server module to configure clamav
 %define name smeserver-clamav
 Name: %{name}
 %define version 1.2.0
-%define release 20
+%define release 21
 Version: %{version}
 Release: %{release}%{?dist}
 License: GPL
@@ -11,8 +11,8 @@ Source: %{name}-%{version}.tar.gz
 BuildRoot: /var/tmp/%{name}-%{version}-%{release}-buildroot
 BuildArchitectures: noarch
 Requires: e-smith-lib
-Requires: clamav >= 0.90
-Requires: clamd >= 0.90
+Requires: clamav >= 0.93
+Requires: clamd >= 0.93
 Requires: clamav-db
 Requires: e-smith-formmagick >= 1.4.0-9
 Provides: e-smith-clamav
@@ -24,6 +24,9 @@ e-smith server enhancement to configure and run clamd and
 freshclam
 
 %changelog
+* Fri Apr 18 2008 Shad L. Lords <slords@mail.com> 1.2.0-21
+- Update defaults for clamav 0.93 [SME: 4223]
+
 * Fri Apr 18 2008 Jonathan Martens <smeserver-contribs@snetram.nl> 1.2.0-20
 - Move cron template from cron.d to crontab [SME: 1047]
 

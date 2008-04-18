@@ -29,8 +29,6 @@ my $filesystems = $db->get_prop("clamav", "FilesystemScanFilesystems") || '/';
 
 my $MailReport = $db->get_prop("clamav", "FilesystemScanReportTo") || 'admin';
 
-my $ArchiveRatio = $db->get_prop("clamav", "ArchiveMaxCompressionRatio") || 0;
-
 my $clamscan_opts = " --recursive --infected --stdout" .
 		    " --log /var/log/clamd/clamscan.log";
 
@@ -43,8 +41,6 @@ my @exclude = split /,/, ($db->get_prop("clamav", "FilesystemScanExclude") ||
 push @exclude, $quarantine_dir;
 
 $clamscan_opts .= " --exclude=$_" for (@exclude);
-
-$clamscan_opts .= " --max-ratio=$ArchiveRatio";
 
 $clamscan_opts .= " --no-html"
       if ($db->get_prop("clamav", "ScanHTML") || "yes") eq "no";

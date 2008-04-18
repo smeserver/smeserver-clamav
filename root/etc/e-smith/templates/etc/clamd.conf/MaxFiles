@@ -1,5 +1,5 @@
 {
 # Number of files to be scanned within an archive.
 # Value of 0 disables the limit.
-    "ArchiveMaxFiles $clamav{ArchiveMaxFiles}";
+    "MaxFiles $clamav{MaxFiles}";
 }
