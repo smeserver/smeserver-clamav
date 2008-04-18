@@ -1,6 +1,0 @@
-{
-# If a file in an archive is compressed more than ArchiveMaxCompressionRatio
-# times it will be marked as a virus (Oversized.ArchiveType, e.g. Oversized.Zip)
-# Value of 0 disables the limit.
-   "ArchiveMaxCompressionRatio $clamav{ArchiveMaxCompressionRatio}";
-}
