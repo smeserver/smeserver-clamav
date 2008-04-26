@@ -134,8 +134,4 @@
 	<base>SUCCESS</base>
 	<trans>The new clamav antivirus settings have been saved.</trans>
     </entry>
-    <entry>
-        <base>ERROR_UPDATING</base>
-        <trans>Error occurred while updating system configuration.</trans>
-    </entry>
 </lexicon>  
