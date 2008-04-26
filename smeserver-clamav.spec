@@ -2,7 +2,7 @@ Summary: SME Server module to configure clamav
 %define name smeserver-clamav
 Name: %{name}
 %define version 1.2.0
-%define release 22
+%define release 23
 Version: %{version}
 Release: %{release}%{?dist}
 License: GPL
@@ -26,6 +26,9 @@ e-smith server enhancement to configure and run clamd and
 freshclam
 
 %changelog
+* Sun Apr 27 2008 Jonathan Martens <smeserver-contribs@snetram.nl> 1.2.0-23
+- Add common <base> tags to e-smith-formmagick's general
+
 * Fri Apr 25 2008 Charlie Brady <charlie_brady@mitel.com> 1.2.0-22
 - Add Obsoletes headers to force removal of clamav-es and
   clamav-es-libs. [SME 4167]

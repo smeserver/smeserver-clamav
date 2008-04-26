@@ -138,7 +138,7 @@ sub change_settings {
 	    HTTPProxyPassword => $HTTPProxyPassword,
 	);
 
-    return $fm->error('ERROR_UPDATING')
+    return $fm->error('ERROR_UPDATING_CONFIGURATION')
         unless ( system( "/sbin/e-smith/signal-event", "clamav-update" ) == 0 );
 
     $fm->success('SUCCESS');
