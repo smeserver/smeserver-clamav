@@ -14,7 +14,7 @@ Requires: e-smith-lib
 Requires: clamav >= 0.93
 Requires: clamd >= 0.93
 Requires: clamav-db
-Requires: e-smith-formmagick >= 1.4.0-9
+Requires: e-smith-formmagick >= 1.4.0-12
 Provides: e-smith-clamav
 Obsoletes: e-smith-clamav
 Obsoletes: clamav-es
