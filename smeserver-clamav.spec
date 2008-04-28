@@ -14,7 +14,7 @@ Requires: e-smith-lib
 Requires: clamav >= 0.93
 Requires: clamd >= 0.93
 Requires: clamav-db
-Requires: e-smith-formmagick >= 1.4.0-9
+Requires: e-smith-formmagick >= 1.4.0-12
 Provides: e-smith-clamav
 Obsoletes: e-smith-clamav
 Obsoletes: clamav-es
@@ -27,7 +27,7 @@ freshclam
 
 %changelog
 * Sun Apr 27 2008 Jonathan Martens <smeserver-contribs@snetram.nl> 1.2.0-23
-- Add common <base> tags to e-smith-formmagick's general
+- Add common <base> tags to e-smith-formmagick's general [SME: 4288]
 
 * Fri Apr 25 2008 Charlie Brady <charlie_brady@mitel.com> 1.2.0-22
 - Add Obsoletes headers to force removal of clamav-es and
