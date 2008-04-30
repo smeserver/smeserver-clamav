@@ -2,7 +2,7 @@ Summary: SME Server module to configure clamav
 %define name smeserver-clamav
 Name: %{name}
 %define version 1.2.0
-%define release 23
+%define release 24
 Version: %{version}
 Release: %{release}%{?dist}
 License: GPL
@@ -26,7 +26,7 @@ e-smith server enhancement to configure and run clamd and
 freshclam
 
 %changelog
-* Wed Apr 30 2008 Jonathan Martens <smeserver-contribs@snetram.nl> 1.2.0-20
+* Wed Apr 30 2008 Jonathan Martens <smeserver-contribs@snetram.nl> 1.2.0-24
 - Remove /etc/cron.d/clamav causing second instance of clamav to run [SME: 4266]
   which was caused by a partial migration of the template fragments [SME: 1047]
 
