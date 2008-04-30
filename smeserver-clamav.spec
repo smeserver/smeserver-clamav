@@ -27,8 +27,10 @@ freshclam
 
 %changelog
 * Wed Apr 30 2008 Jonathan Martens <smeserver-contribs@snetram.nl> 1.2.0-24
-- Remove /etc/cron.d/clamav causing second instance of clamav to run [SME: 4266]
-  which was caused by a partial migration of the template fragments [SME: 1047]
+- Remove any /etc/cron.d/clamav file. We moved the content to /etc/crontab
+  [SME: 1047], but we need to remove any leftover file from earlier template
+  expansion, which, if present, could cause the nightly file scanning to be
+  run twice. [SME: 4266]
 
 * Sun Apr 27 2008 Jonathan Martens <smeserver-contribs@snetram.nl> 1.2.0-23
 - Add common <base> tags to e-smith-formmagick's general [SME: 4288]
