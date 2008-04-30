@@ -26,6 +26,10 @@ e-smith server enhancement to configure and run clamd and
 freshclam
 
 %changelog
+* Wed Apr 30 2008 Jonathan Martens <smeserver-contribs@snetram.nl> 1.2.0-20
+- Remove /etc/cron.d/clamav causing second instance of clamav to run [SME: 4266]
+  which was caused by a partial migration of the template fragments [SME: 1047]
+
 * Sun Apr 27 2008 Jonathan Martens <smeserver-contribs@snetram.nl> 1.2.0-23
 - Add common <base> tags to e-smith-formmagick's general [SME: 4288]
 
@@ -289,6 +293,7 @@ mkdir -p root/var/spool/clamav/quarantine
 %pre
 
 %post
+rm -f /etc/cron.d/clamav
 
 %install
 rm -rf $RPM_BUILD_ROOT
