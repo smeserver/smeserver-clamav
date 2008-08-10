@@ -2,7 +2,7 @@ Summary: SME Server module to configure clamav
 %define name smeserver-clamav
 Name: %{name}
 %define version 1.2.0
-%define release 24
+%define release 25
 Version: %{version}
 Release: %{release}%{?dist}
 License: GPL
@@ -11,6 +11,7 @@ Source: %{name}-%{version}.tar.gz
 BuildRoot: /var/tmp/%{name}-%{version}-%{release}-buildroot
 BuildArchitectures: noarch
 Requires: e-smith-lib
+Requires: e-smith-base
 Requires: clamav >= 0.93
 Requires: clamd >= 0.93
 Requires: clamav-db
@@ -26,6 +27,9 @@ e-smith server enhancement to configure and run clamd and
 freshclam
 
 %changelog
+* Sun Aug 10 2008 Shad L. Lords <slords@mail.com> 1.2.0-25
+- Remove links to crontab in all but clamav-update [SME: 4494]
+
 * Wed Apr 30 2008 Jonathan Martens <smeserver-contribs@snetram.nl> 1.2.0-24
 - Remove any /etc/cron.d/clamav file. We moved the content to /etc/crontab
   [SME: 1047], but we need to remove any leftover file from earlier template
