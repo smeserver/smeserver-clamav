@@ -2,7 +2,7 @@ Summary: SME Server module to configure clamav
 %define name smeserver-clamav
 Name: %{name}
 %define version 1.2.0
-%define release 21
+%define release 26
 Version: %{version}
 Release: %{release}%{?dist}
 License: GPL
@@ -11,19 +11,40 @@ Source: %{name}-%{version}.tar.gz
 BuildRoot: /var/tmp/%{name}-%{version}-%{release}-buildroot
 BuildArchitectures: noarch
 Requires: e-smith-lib
+Requires: e-smith-base
 Requires: clamav >= 0.93
 Requires: clamd >= 0.93
 Requires: clamav-db
-Requires: e-smith-formmagick >= 1.4.0-9
+Requires: e-smith-formmagick >= 1.4.0-12
 Provides: e-smith-clamav
 Obsoletes: e-smith-clamav
+Obsoletes: clamav-es
+Obsoletes: clamav-es-libs
 BuildRequires: e-smith-devtools
 
 %description
-e-smith server enhancement to configure and run clamd and
-freshclam
+SME Server enhancement to configure and run clamd and freshclam
 
 %changelog
+* Mon Sep 22 2008 Stephen Noble <support@dungog.net> 1.2.0-26
+- Remove obsolete locale tags [SME: 4235]
+
+* Sun Aug 10 2008 Shad L. Lords <slords@mail.com> 1.2.0-25
+- Remove links to crontab in all but clamav-update [SME: 4494]
+
+* Wed Apr 30 2008 Jonathan Martens <smeserver-contribs@snetram.nl> 1.2.0-24
+- Remove any /etc/cron.d/clamav file. We moved the content to /etc/crontab
+  [SME: 1047], but we need to remove any leftover file from earlier template
+  expansion, which, if present, could cause the nightly file scanning to be
+  run twice. [SME: 4266]
+
+* Sun Apr 27 2008 Jonathan Martens <smeserver-contribs@snetram.nl> 1.2.0-23
+- Add common <base> tags to e-smith-formmagick's general [SME: 4288]
+
+* Fri Apr 25 2008 Charlie Brady <charlie_brady@mitel.com> 1.2.0-22
+- Add Obsoletes headers to force removal of clamav-es and
+  clamav-es-libs. [SME 4167]
+
 * Fri Apr 18 2008 Shad L. Lords <slords@mail.com> 1.2.0-21
 - Update defaults for clamav 0.93 [SME: 4223]
 
@@ -280,6 +301,7 @@ mkdir -p root/var/spool/clamav/quarantine
 %pre
 
 %post
+rm -f /etc/cron.d/clamav
 
 %install
 rm -rf $RPM_BUILD_ROOT

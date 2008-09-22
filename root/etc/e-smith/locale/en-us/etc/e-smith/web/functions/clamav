@@ -6,92 +6,24 @@
         <trans>Antivirus settings</trans>
     </entry>
     <entry>
-        <base>LABEL_QMAILSCAN_INTEGRATION</base>
-        <trans>Integration with qmail-scanner</trans>
-    </entry>
-    <entry>
-        <base>DESC_QMAILSCAN_INTEGRATION</base>
-        <trans><![CDATA[
-	    <h2>Qmail-scanner Integration</h2>
-	    If this option is enabled then email that the 'qmail-scanner' checks
-	    will also be checked for viruses. If a virus is detected the 
-	    e-mail is flagged for action.  The action that will be taken 
-	    depends on the settings of the 'qmail-scanner' program.]]></trans>
-    </entry>
-    <entry>
         <base>LABEL_FILESYSTEM_SCAN_PERIOD</base>
         <trans>Scan filesystem</trans>
     </entry>
     <entry>
         <base>DESC_FILESYSTEM_SCAN_PERIOD</base>
         <trans><![CDATA[
-	    <h2>General Settings</h2>
-	    If this option is enabled then the filesystem will be 
-	    scanned for viruses.  A report of any found viruses will be
-	    emailed to the administrator.]]></trans>
+            <h2>General Settings</h2>
+            If this option is enabled then the filesystem will be 
+            scanned for viruses.  A report of any found viruses will be
+            emailed to the administrator.]]></trans>
     </entry>
-
     <entry>
         <base>LABEL_QUARANTINE</base>
         <trans>Quarantine infected files</trans>
     </entry>
     <entry>
-        <base>DESC_QUARANTINE</base>
-	<trans>Should infected files be moved to the quarantine area?</trans>
-    </entry>
-
-    <entry>
-        <base>LABEL_DATABASE_MIRROR</base>
-        <trans>Select country for database updates</trans>
-    </entry>
-    <entry>
-        <base>DESC_DATABASE_MIRROR</base>
-        <trans><![CDATA[
-            Select the country from the list which is closest to 
-            your location from where Clam Antivirus will download virus definition updates from. ]]>
-        </trans>
-    </entry>
-
-    <entry>
         <base>LABEL_CLAM_VERSIONS</base>
         <trans>ClamAV and db versions</trans>
-    </entry>
-
-    <entry>
-        <base>LABEL_UPDATE_OFFICE_HOURS</base>
-        <trans>During office hours (8:00 AM to 6:00 PM) on weekdays</trans>
-    </entry>
-    <entry>
-        <base>LABEL_UPDATE_NON_OFFICE_HOURS</base>
-        <trans>Outside office hours (6:00 PM to 8:00 AM) on weekdays</trans>
-    </entry>
-    <entry>
-        <base>LABEL_UPDATE_WEEKEND</base>
-        <trans>During the weekend</trans>
-    </entry>
-    <entry>
-        <base>DESC_UPDATE_HOURS</base>
-        <trans>You can select the frequency by which to check for virus definition updates dependent on your connection type. More frequent connections mean that your database will stay up to date, but will also cause Internet requests to be sent more often, possibly increasing your phone and Internet charges.</trans>
-    </entry>
-    <entry>
-        <base>DESC_PROXY_SERVER</base>
-        <trans>If you require a proxy server to connect to the database server (via http) enter the proxy server hostname and port number below. If you require a username and password to access the proxy server enter these details below. Leave these blank for normal operation.</trans>
-    </entry>
-    <entry>
-        <base>LABEL_PROXY_SERVER</base>
-        <trans>Proxy server</trans>
-    </entry>
-    <entry>
-        <base>LABEL_PROXY_PORT</base>
-        <trans>Proxy port</trans>
-    </entry>
-    <entry>
-        <base>LABEL_PROXY_USERNAME</base>
-        <trans>Proxy username</trans>
-    </entry>
-    <entry>
-        <base>LABEL_PROXY_PASSWORD</base>
-        <trans>Proxy password</trans>
     </entry>
     <entry>
       <base>WEEKLY</base>
@@ -102,40 +34,11 @@
       <trans>Never</trans>
     </entry>
     <entry>
-      <base>EVERYHOUR</base>
-      <trans>Once an hour</trans>
-    </entry>
-    <entry>
-      <base>EVERY2HRS</base>
-      <trans>Every 2 hours</trans>
-    </entry>
-    <entry>
-      <base>EVERY4HRS</base>
-      <trans>Every 4 hours</trans>
-    </entry>
-    <entry>
-      <base>EVERY6HRS</base>
-      <trans>Every 6 hours</trans>
-    </entry>
-    <entry>
       <base>DAILY</base>
       <trans>Daily</trans>
     </entry>
     <entry>
-        <base>INVALID_PROXY_SERVER</base>
-        <trans>Please enter an Internet domain name or an IP address
-        for your http proxy server. (Do not include http://).</trans>
-    </entry>
-    <entry>
-        <base>INVALID_PORT_NUMBER</base>
-        <trans>The port number may contain only numbers eg '3128'.</trans>
-    </entry>
-    <entry>
-	<base>SUCCESS</base>
-	<trans>The new clamav antivirus settings have been saved.</trans>
-    </entry>
-    <entry>
-        <base>ERROR_UPDATING</base>
-        <trans>Error occurred while updating system configuration.</trans>
+        <base>SUCCESS</base>
+        <trans>The new clamav antivirus settings have been saved.</trans>
     </entry>
 </lexicon>  
