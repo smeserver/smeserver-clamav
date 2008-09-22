@@ -2,7 +2,7 @@ Summary: SME Server module to configure clamav
 %define name smeserver-clamav
 Name: %{name}
 %define version 1.2.0
-%define release 25
+%define release 26
 Version: %{version}
 Release: %{release}%{?dist}
 License: GPL
@@ -23,10 +23,12 @@ Obsoletes: clamav-es-libs
 BuildRequires: e-smith-devtools
 
 %description
-e-smith server enhancement to configure and run clamd and
-freshclam
+SME Server enhancement to configure and run clamd and freshclam
 
 %changelog
+* Mon Sep 22 2008 Stephen Noble <support@dungog.net> 1.2.0-26
+- Remove obsolete locale tags [SME: 4235]
+
 * Sun Aug 10 2008 Shad L. Lords <slords@mail.com> 1.2.0-25
 - Remove links to crontab in all but clamav-update [SME: 4494]
 
