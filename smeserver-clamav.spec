@@ -1,8 +1,8 @@
 Summary: SME Server module to configure clamav
 %define name smeserver-clamav
 Name: %{name}
-%define version 1.2.0
-%define release 26
+%define version 2.2.0
+%define release 1
 Version: %{version}
 Release: %{release}%{?dist}
 License: GPL
@@ -26,6 +26,9 @@ BuildRequires: e-smith-devtools
 SME Server enhancement to configure and run clamd and freshclam
 
 %changelog
+* Tue Oct 7 2008 Shad L. Lords <slords@mail.com> 2.2.0-1.sme
+- Roll new stream to separate sme7/sme8 trees [SME: 4633]
+
 * Mon Sep 22 2008 Stephen Noble <support@dungog.net> 1.2.0-26
 - Remove obsolete locale tags [SME: 4235]
 
