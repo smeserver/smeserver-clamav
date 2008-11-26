@@ -2,7 +2,7 @@ Summary: SME Server module to configure clamav
 %define name smeserver-clamav
 Name: %{name}
 %define version 2.0.0
-%define release 1
+%define release 2
 Version: %{version}
 Release: %{release}%{?dist}
 License: GPL
@@ -18,6 +18,7 @@ Requires: clamav-db
 Requires: e-smith-formmagick >= 1.4.0-12
 Provides: e-smith-clamav
 Obsoletes: e-smith-clamav
+Obsoletes: e-smith-antivirus
 Obsoletes: clamav-es
 Obsoletes: clamav-es-libs
 BuildRequires: e-smith-devtools
@@ -26,6 +27,9 @@ BuildRequires: e-smith-devtools
 SME Server enhancement to configure and run clamd and freshclam
 
 %changelog
+* Thu Nov 27 2008 Stephen Noble <support@dungog.net> 2.0.0-2
+- Obsolete e-smith-antivirus [SME: 4786]
+
 * Tue Oct 7 2008 Shad L. Lords <slords@mail.com> 2.0.0-1.sme
 - Roll new stream to separate sme7/sme8 trees [SME: 4633]
 
