@@ -1,0 +1,1 @@
+HeuristicScanPrecedence { $clamav{HeuristicScanPrecedence} || 'no' }
