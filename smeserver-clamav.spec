@@ -28,7 +28,7 @@ SME Server enhancement to configure and run clamd and freshclam
 
 %changelog
 * Wed Nov 4 2009 Jonathan Martens <smeserver-contribs@snetram.nl> 2.2.0-5
-- Cahnge default value for HeuristicScanPrecedence to yes [SME: 5204]
+- Change default value for HeuristicScanPrecedence to yes [SME: 5204]
 
 * Tue Jun 2 2009 Shad L. Lords <slords@mail.com> 2.2.0-4.sme
 - Fix permissions on freshclam.conf file [SME: 5319]
