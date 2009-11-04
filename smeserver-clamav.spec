@@ -2,7 +2,7 @@ Summary: SME Server module to configure clamav
 %define name smeserver-clamav
 Name: %{name}
 %define version 2.2.0
-%define release 2
+%define release 5
 Version: %{version}
 Release: %{release}%{?dist}
 License: GPL
@@ -12,8 +12,8 @@ BuildRoot: /var/tmp/%{name}-%{version}-%{release}-buildroot
 BuildArchitectures: noarch
 Requires: e-smith-lib
 Requires: e-smith-base
-Requires: clamav >= 0.93
-Requires: clamd >= 0.93
+Requires: clamav >= 0.94
+Requires: clamd >= 0.94
 Requires: clamav-db
 Requires: e-smith-formmagick >= 1.4.0-12
 Provides: e-smith-clamav
@@ -27,6 +27,15 @@ BuildRequires: e-smith-devtools
 SME Server enhancement to configure and run clamd and freshclam
 
 %changelog
+* Wed Nov 4 2009 Jonathan Martens <smeserver-contribs@snetram.nl> 2.2.0-5
+- Cahnge default value for HeuristicScanPrecedence to yes [SME: 5204]
+
+* Tue Jun 2 2009 Shad L. Lords <slords@mail.com> 2.2.0-4.sme
+- Fix permissions on freshclam.conf file [SME: 5319]
+
+* Mon Apr 13 2009 Jonathan Martens <smeserver-contribs@snetram.nl> 2.2.0-3
+- Add HeuristicScanPrecedence option, default disabled [SME: 4598]
+
 * Thu Nov 27 2008 Stephen Noble <support@dungog.net> 2.2.0-2
 - Obsolete e-smith-antivirus [SME: 4786]
 
