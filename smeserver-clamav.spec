@@ -2,7 +2,7 @@ Summary: SME Server module to configure clamav
 %define name smeserver-clamav
 Name: %{name}
 %define version 2.0.0
-%define release 4
+%define release 5
 Version: %{version}
 Release: %{release}%{?dist}
 License: GPL
@@ -27,13 +27,17 @@ BuildRequires: e-smith-devtools
 SME Server enhancement to configure and run clamd and freshclam
 
 %changelog
+* Fri Nov 6 2009 Jonathan Martens <smeserver-contribs@snetram.nl> 2.0.0-5.sme
+- Setup logrotate for /var/log/clamd/smeserver-clamscan.log [SME: 5287]
+- Minor changelog fixes in version number
+
 * Tue Jun 2 2009 Shad L. Lords <slords@mail.com> 2.0.0-4.sme
 - Fix permissions on freshclam.conf file [SME: 5320]
 
-* Mon Apr 13 2009 Jonathan Martens <smeserver-contribs@snetram.nl> 2.0.0-3
+* Mon Apr 13 2009 Jonathan Martens <smeserver-contribs@snetram.nl> 2.0.0-3.sme
 - Add HeuristicScanPrecedence option, default disabled [SME: 4598]
 
-* Thu Nov 27 2008 Stephen Noble <support@dungog.net> 2.0.0-2
+* Thu Nov 27 2008 Stephen Noble <support@dungog.net> 2.0.0-2.sme
 - Obsolete e-smith-antivirus [SME: 4786]
 
 * Tue Oct 7 2008 Shad L. Lords <slords@mail.com> 2.0.0-1.sme
