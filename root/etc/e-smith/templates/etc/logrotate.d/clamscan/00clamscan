@@ -1,0 +1,7 @@
+/var/log/clamd/smeserver-clamscan.log \{
+    missingok
+    notifempty
+    rotate 4
+    monthly
+    create 644 root smelog
+\}
