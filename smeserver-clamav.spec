@@ -2,7 +2,7 @@ Summary: SME Server module to configure clamav
 %define name smeserver-clamav
 Name: %{name}
 %define version 2.0.0
-%define release 6
+%define release 7
 Version: %{version}
 Release: %{release}%{?dist}
 License: GPL
@@ -27,6 +27,9 @@ BuildRequires: e-smith-devtools
 SME Server enhancement to configure and run clamd and freshclam
 
 %changelog
+* Sat Feb 6 2010 Stephen Noble <support@dungog.net> 2.0.0-7.sme
+- Setup logrotate for /var/log/clamd/clamscan.log  [SME: 5287]
+
 * Fri Nov 6 2009 Jonathan Martens <smeserver-contribs@snetram.nl> 2.0.0-6.sme
 - Remove create option from logrotate configuration [SME: 5287]
 

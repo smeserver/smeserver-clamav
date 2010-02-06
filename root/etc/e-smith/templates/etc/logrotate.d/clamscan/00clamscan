@@ -3,4 +3,13 @@
     notifempty
     rotate 4
     monthly
+    compress
+\}
+
+/var/log/clamd/clamscan.log \{
+    missingok
+    notifempty
+    rotate 4
+    monthly
+    compress
 \}
