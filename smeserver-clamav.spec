@@ -2,7 +2,7 @@ Summary: SME Server module to configure clamav
 %define name smeserver-clamav
 Name: %{name}
 %define version 2.2.0
-%define release 9
+%define release 10
 Version: %{version}
 Release: %{release}%{?dist}
 License: GPL
@@ -27,6 +27,9 @@ BuildRequires: e-smith-devtools
 SME Server enhancement to configure and run clamd and freshclam
 
 %changelog
+* Sun Apr 18 2010 Jonathan Martens <smeserver-contribs@snetram.nl> 2.2.0-10.sme
+- Increase MemLimit to 600M for clamav-0.96 [SME: 5868]
+
 * Fri Apr 02 2010  Filippo Carletti <filippo.carletti@gmail.com> 2.2.0-9.sme
 - Increase MemLimit to 300M for clamav-0.96 [SME: 5868]
 
