@@ -2,7 +2,7 @@ Summary: SME Server module to configure clamav
 %define name smeserver-clamav
 Name: %{name}
 %define version 2.0.0
-%define release 8
+%define release 9
 Version: %{version}
 Release: %{release}%{?dist}
 License: GPL
@@ -27,8 +27,11 @@ BuildRequires: e-smith-devtools
 SME Server enhancement to configure and run clamd and freshclam
 
 %changelog
+* Thu Jun 3 2010 Ian Wells <esmith@wellsi.com> 2.0.0-9.sme
+- template /etc/cron.daily/freshclam, and make it a NO-OP [SME: 4297]
+
 * Sun Apr 18 2010 Jonathan Martens <smeserver-contribs@snetram.nl> 2.0.0-8.sme
-- Increase MemLimit to 600M for clamav-0.96 [SME: 5868]
+- Increase MemLimit to 600M for clamav-0.96 [SME: 5649]
 
 * Sat Feb 6 2010 Stephen Noble <support@dungog.net> 2.0.0-7.sme
 - Setup logrotate for /var/log/clamd/clamscan.log  [SME: 5287]

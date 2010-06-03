@@ -17,6 +17,7 @@ foreach (qw(freshclam.conf clamd.conf logrotate.d/clamscan))
 }
 
 templates2events("/etc/crontab", "clamav-update");
+templates2events("/etc/cron.daily/freshclam", "clamav-update");
 
 my $event = "email-update";
 
