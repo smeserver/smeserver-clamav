@@ -2,7 +2,7 @@ Summary: SME Server module to configure clamav
 %define name smeserver-clamav
 Name: %{name}
 %define version 2.0.0
-%define release 9
+%define release 10
 Version: %{version}
 Release: %{release}%{?dist}
 License: GPL
@@ -27,6 +27,9 @@ BuildRequires: e-smith-devtools
 SME Server enhancement to configure and run clamd and freshclam
 
 %changelog
+* Thu Jun 5 2010 Ian Wells <esmith@wellsi.com> 2.0.0-10.sme
+- correct createlinks for /etc/cron.daily/freshclam [SME: 4297]
+
 * Thu Jun 3 2010 Ian Wells <esmith@wellsi.com> 2.0.0-9.sme
 - template /etc/cron.daily/freshclam, and make it a NO-OP [SME: 4297]
 
