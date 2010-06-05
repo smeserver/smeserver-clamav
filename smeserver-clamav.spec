@@ -27,7 +27,7 @@ BuildRequires: e-smith-devtools
 SME Server enhancement to configure and run clamd and freshclam
 
 %changelog
-* Thu Jun 5 2010 Ian Wells <esmith@wellsi.com> 2.0.0-10.sme
+* Sat Jun 5 2010 Ian Wells <esmith@wellsi.com> 2.0.0-10.sme
 - correct createlinks for /etc/cron.daily/freshclam [SME: 4297]
 
 * Thu Jun 3 2010 Ian Wells <esmith@wellsi.com> 2.0.0-9.sme
