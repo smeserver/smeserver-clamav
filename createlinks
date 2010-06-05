@@ -5,7 +5,7 @@ use esmith::Build::CreateLinks qw(:all);
 my $panel = "manager";
 panel_link("clamav", $panel);
 
-foreach (qw(freshclam.conf clamd.conf logrotate.d/clamscan))
+foreach (qw(freshclam.conf clamd.conf logrotate.d/clamscan cron.daily/freshclam))
 {
     templates2events("/etc/$_",
 	qw(
